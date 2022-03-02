@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css" />
+    <!-- <link rel="stylesheet" href="style2.css" /> -->
+    <!-- <link rel="stylesheet" href="style3.css" /> -->
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="rank">Rank</div>
+        <div id="collector">Collector</div>
+        <div id="samples">
+          <div id="sampletext">Sample</div>
+          <div id="quality">
+            <div>Quality</div>
+            <div id="qualitytexts">
+              <div>
+                <div><span>unknown</span></div>
+                <div id="BlackDraw"></div>
+              </div>
+              <div>
+                <div><span>good</span></div>
+                <div id="GreenDraw"></div>
+              </div>
+
+              <div>
+                <div><span>bad</span></div>
+                <div id="RedDraw"></div>
+              </div>
+            </div>
+            <!-- <div id="qualitycolor">
+              <div id="BlackDraw"></div>
+              &nbsp; &nbsp; &nbsp;
+              <div id="GreenDraw"></div>
+              &nbsp; &nbsp; &nbsp; &nbsp;
+              <div id="RedDraw"></div>
+            </div> -->
+          </div>
+        </div>
+        <div id="TotalScore">
+          <p>Total<br />Score</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="containerblock"></section>
+    <!-- <section>
+      <div class="small_block">
+        <div class="row_container1">
+          <div class="small_rank row"></div>
+          <div class="small_collector row"></div>
+          <div class="small_sample row largerow"></div>
+          <div class="small_score row">
+            <progress class="small_progress" max="100"></progress>
+            <span class="small_score_text"></span>
+          </div>
+        </div>
+        <div class="row_container1 hide_detailcontainer">
+          <div class="row"></div>
+        </div>
+      </div>
+    </section> -->
+
+    <section>
+      <div class="main_block">
+        <div class="row_container2">
+          <div class="main_rank row"></div>
+          <div class="main_collector row"></div>
+          <div class="main_sample row largerow"></div>
+          <div class="main_score row">
+            <progress class="main_progress" max="100"></progress>
+            <span class="main_score_text"></span>
+          </div>
+        </div>
+
+        <!-- <div class="row_container2">
+          <div class="row detailcontainer"></div>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- <section>
+      <div class="small_block">
+        <div class="row_container1">
+          <div class="small_rank row"></div>
+          <div class="small_collector row"></div>
+          <div class="small_sample row largerow"></div>
+          <div class="small_score row">
+            <progress class="small_progress" max="100"></progress>
+            <span class="small_score_text"></span>
+          </div>
+        </div>
+        <div class="row_container1 hide_detailcontainer">
+          <div class="row"></div>
+        </div>
+      </div>
+    </section> -->
+  </body>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- <script src="app1.js"></script> -->
+  <!-- <script src="app2.js"></script> -->
+  <!-- <script src="app4.js"></script> -->
+  <script src="app5.js"></script>
+  <script>
+    var datas1 = [
+      { collector: "naturalist2953", rank: 1, score: 100 },
+      { date: "2020-04-23 00:39:28", quality: "good" },
+
+      { date: "2020-04-24 01:10:31", quality: "good" },
+      { date: "2020-04-25 01:10:31", quality: "good" },
+      { date: "2020-04-26 18:24:00", quality: "good" },
+      { date: "2020-04-27 13:24:00", quality: "good" },
+    ];
+    var datas2 = [
+      { collector: "mandy182", rank: 2, score: 90 },
+      { date: "2020-04-23 00:39:28", quality: "good" },
+
+      { date: "2020-04-24 01:10:31", quality: "good" },
+      { date: "2020-04-25 11:10:31", quality: "bad" },
+      { date: "2020-04-26 18:24:00", quality: "bad" },
+      { date: "2020-04-27 13:24:00", quality: "good" },
+    ];
+    var datas3 = [
+      { collector: "naturalist14740", rank: 3, score: 85 },
+      { date: "2020-04-23 00:39:28", quality: "good" },
+
+      { date: "2020-04-24 04:10:31", quality: "good" },
+      { date: "2020-04-25 01:10:31", quality: "good" },
+      { date: "2020-04-26 18:24:00", quality: "good" },
+      { date: "2020-04-27 13:24:00", quality: "good" },
+    ];
+    var datas4 = [
+      { collector: "v9320032", rank: 4, score: 80 },
+      { date: "2020-04-23 00:39:28", quality: "bad" },
+
+      { date: "2020-04-24 01:10:31", quality: "bad" },
+      { date: "2020-04-25 01:10:31", quality: "good" },
+      { date: "2020-04-26 18:24:00", quality: "bad" },
+      { date: "2020-04-27 13:24:00", quality: "good" },
+    ];
+    var datas5 = [
+      { collector: "ku6777", rank: 5, score: 80 },
+      { date: "2020-04-24 7:45:52", quality: "bad" },
+
+      { date: "2020-04-24 01:10:31", quality: "good" },
+      { date: "2020-04-25 16:10:31", quality: "good" },
+      { date: "2020-04-26 18:24:00", quality: "good" },
+      { date: "2020-04-27 13:24:00", quality: "good" },
+    ];
+    var datas6 = [
+      { collector: "peter000", rank: 6, score: 70 },
+      { date: "2020-04-23 00:39:28", quality: "bad" },
+
+      { date: "2020-04-24 01:10:31", quality: "bad" },
+      { date: "2020-04-25 01:10:31", quality: "good" },
+      { date: "2020-04-26 18:24:00", quality: "bad" },
+      { date: "2020-04-27 13:24:00", quality: "good" },
+    ];
+    var datas7 = [
+      { collector: "Sam888", rank: 7, score: 60 },
+      { date: "2020-04-24 00:39:28", quality: "bad" },
+
+      { date: "2020-04-24 01:52:36 ", quality: "bad" },
+      { date: "2020-04-24 01:52:36 ", quality: "unknown" },
+      { date: "2020-04-26 18:24:00", quality: "bad" },
+      { date: "2020-04-27 13:24:00", quality: "good" },
+    ];
+
+    alldatas = [datas1, datas2, datas3, datas4, datas5, datas6, datas7];
+    // console.log(alldatas);
+
+    alldatas.forEach((value, i) => {
+      var smallblock = d3
+        .select(".containerblock")
+        .append("section")
+        .append("div")
+        .classed("small_block", true);
+      var row_container1 = smallblock
+        .append("div")
+        .classed("row_container1", true);
+      row_container1
+        .append("div")
+        .classed("small_rank", true)
+        .classed("row", true);
+      row_container1
+        .append("div")
+        .classed("small_collector", true)
+        .classed("row", true);
+      row_container1
+        .append("div")
+        .classed("small_sample", true)
+        .classed("row", true)
+        .classed("largerow", true);
+      var row2 = row_container1
+        .append("div")
+        .classed("small_score", true)
+        .classed("row", true);
+
+      row2.append("progress").classed("small_progress", true);
+      row2.append("span").classed("small_score_text", true);
+      smallblock
+        .append("div")
+        .classed("row_container1", true)
+        .classed("hide_detailcontainer", true);
+      // .append("div")
+      // .classed("row", true);
+
+      //   d3.select(".small_block")
+      //     .append("div")
+      //     .classed("row_container1", true)
+      //     .classed("hide_detailcontainer", true)
+      //     .append("div")
+      //     .classed("row", true);
+
+      //   document.querySelector(".container").innerHTML(`<section>
+      //   <div class="small_block">
+      //     <div class="row_container1">
+      //       <div class="small_rank row"></div>
+      //       <div class="small_collector row"></div>
+      //       <div class="small_sample row largerow"></div>
+      //       <div class="small_score row">
+      //         <progress class="small_progress" max="100"></progress>
+      //         <span class="small_score_text"></span>
+      //       </div>
+      //     </div>
+      //     <div class="row_container1 hide_detailcontainer">
+      //       <div class="row"></div>
+      //     </div>
+      //   </div>
+      // </section>`);
+    });
+
+    var allblock = document.querySelectorAll("section");
+    // console.log(allblock);
+    for (i of allblock) {
+      if (i.children[0].classList.contains("small_block")) {
+        // console.log(i.children[0].classList.contains("small_block"));
+        i.children[0].addEventListener("click", function () {
+          console.log(this);
+          this.classList.toggle("small_block");
+          this.classList.toggle("active");
+
+          // small_block.childNodes.classList.toggle("row_container2")
+
+          if (this.classList.contains("active")) {
+            this.children[0].classList.toggle("row_container1");
+            this.children[0].classList.toggle("row_container2");
+            this.children[1].classList.toggle("row_container1");
+            this.children[1].classList.toggle("row_container2");
+            this.children[1].children[0].classList.toggle("detailcontainer");
+            this.children[1].classList.toggle("hide_detailcontainer");
+            // this.children[1].children[0].classList.toggle("detailcontainer");
+            // this.children[1].children[0].classList.toggle("detailcontainer");
+          } else if (!this.classList.contains("active")) {
+            this.children[0].classList.toggle("row_container1");
+            this.children[0].classList.toggle("row_container2");
+            this.children[1].classList.toggle("row_container1");
+            this.children[1].classList.toggle("row_container2");
+            this.children[1].children[0].classList.toggle("detailcontainer");
+            this.children[1].classList.toggle("hide_detailcontainer");
+            // this.children[1].children[0].classList.toggle("detailcontainer");
+          }
+        });
+      }
+    }
+    var allblock = document
+      .querySelector(".containerblock")
+      .querySelectorAll("section");
+    // for (k in allblock) {
+    //   // var small_ranks = d3
+    //   //       .select(j.children[0].children[0].children[0])
+    //   //       .text(value.rank);
+    //   console.log(k);
+    // }
+    var margin3 = { top: 10, right: 10, bottom: 10, left: 10 },
+      width3 = 1350 - margin.left - margin.right,
+      height3 = 40 - margin.top - margin.bottom;
+    for ([index, j] of allblock.entries()) {
+      d3.select(j.children[0].children[0].children[0]).text(
+        alldatas[index][0].rank
+      );
+      //   d3.select(i.children[0].children[0].children[1]).text(
+      //     alldatas[index][1].collector
+      //   );
+      d3.select(j.children[0].children[0].children[1]).text(
+        alldatas[index][0].collector
+      );
+      var svgs = d3
+        .select(j.children[0].children[0].children[2])
+        .append("svg")
+        .attr("transform", `translate(0,3)`)
+        .attr("width", width3 + margin3.left + margin3.right)
+        .attr("height", height3 + margin3.top + margin3.bottom)
+        .append("g")
+        .attr("transform", `translate(30,10)`);
+      //   console.log(svgs);
+      d3.select(j.children[0].children[0].children[3].children[0])
+        .attr("value", alldatas[index][0].score)
+        .attr("max", 100);
+
+      //   console.log(j.children[0].children[0].children[3].children[0]);
+      //   console.log(alldatas[index][2]);
+      //   alldatas[index][2].date = new Date(alldatas[index][2].date);
+      //   alldatas[index][2].hour = formatTime(alldatas[index][2].date);
+      //   var parts = alldatas[index][2].hour.split(/:/);
+      //   var timePeriodMillis =
+      //     parseInt(parts[0], 10) * 60 * 60 * 1000 +
+      //     parseInt(parts[1], 10) * 60 * 1000 +
+      //     parseInt(parts[2], 10) * 1000;
+      //   alldatas[index][2].hour = new Date();
+      //   alldatas[index][2].hour.setTime(todayMillis + timePeriodMillis);
+      //   console.log(alldatas[index][1]);
+      //   console.log(alldatas[index][2]);
+
+      alldatas[index].forEach((d, i) => {
+        d.date = new Date(d.date);
+        //   console.log(formatDay(d.date));
+        d.hour = formatTime(d.date);
+        // console.log(d.hour);
+        var parts = d.hour.split(/:/);
+
+        var timePeriodMillis =
+          parseInt(parts[0], 10) * 60 * 60 * 1000 +
+          parseInt(parts[1], 10) * 60 * 1000 +
+          parseInt(parts[2], 10) * 1000;
+        d.hour = new Date();
+        //   d.hour.setTime(todayMillis + timePeriodMillis);
+        d.hour.setTime(todayMillis + timePeriodMillis);
+        console.log(d.hour);
+      });
+      var xScale_small = d3
+        .scaleTime()
+        .domain(d3.extent(alldatas[index], (d) => d.date))
+        .range([margin3.left * 6 + 5, width3])
+        .nice();
+
+      // var yScale = d3.axisLeft()
+      var yScale_small = d3
+        .scaleTime()
+        .domain(d3.extent(alldatas[index], (d) => d.hour))
+        .range([margin3.bottom, height3 - margin3.bottom])
+        .nice(d3.timeDay);
+      console.log(d3.extent(alldatas[index]));
+      svgs
+        .selectAll("circle")
+        .data(alldatas[index])
+        .enter()
+        .append("circle")
+
+        .attr("class", "cir")
+        .attr("cx", (d) => xScale_small(d.date))
+        .attr("cy", (d) => yScale_small(d.hour))
+        .on("click", function (d, i) {
+          console.log(i);
+        })
+        .filter((d) => d.rank === undefined)
+        .attr("r", 10.5)
+        .attr("fill", function (d) {
+          console.log(d.quality);
+          if (d.quality == "good") {
+            return "green";
+          } else if (d.quality == "bad") {
+            return "red";
+          } else {
+            return "black";
+          }
+        });
+
+      //   console.log(xScale_small);
+      //   console.log(alldatas[index][1]);
+      //    var xScale_small = d3
+      //     .scaleTime()
+      //     .domain(d3.extent(datas3, (d) => d.date))
+      //     .range([margin.left * 6 + 5, width3])
+      //     .nice();
+
+      //   console.log(alldatas[index][2]);
+      //      datas3.forEach((d) => {
+      //   d.date = new Date(d.date);
+      //   //   console.log(formatDay(d.date));
+      //   d.hour = formatTime(d.date);
+      //   // console.log(d.hour);
+      //   var parts = d.hour.split(/:/);
+
+      //   var timePeriodMillis =
+      //     parseInt(parts[0], 10) * 60 * 60 * 1000 +
+      //     parseInt(parts[1], 10) * 60 * 1000 +
+      //     parseInt(parts[2], 10) * 1000;
+      //   d.hour = new Date();
+      //   //   d.hour.setTime(todayMillis + timePeriodMillis);
+      //   d.hour.setTime(todayMillis + timePeriodMillis);
+      //   console.log(d.hour);
+      // });
+      // var xScale_small = d3
+      //   .scaleTime()
+      //   .domain(d3.extent(datas3, (d) => d.date))
+      //   .range([margin.left * 6 + 5, width3])
+      //   .nice();
+      // var xAxis_small = d3
+      //   .axisBottom(xScale_small)
+      //   .tickFormat(d3.timeFormat("%Y/%m/%d"))
+      //   .ticks(4);
+
+      // // var yScale = d3.axisLeft()
+      // var yScale_small = d3
+      //   .scaleTime()
+      //   .domain(d3.extent(datas3, (d) => d.hour))
+      //   .range([margin3.bottom, height3 - margin3.bottom])
+      //   .nice(d3.timeDay);
+      // var yAxis_small = d3
+      //   .axisLeft(yScale_small)
+      //   .tickFormat(d3.timeFormat("%H:%M"))
+
+      //   .ticks(10);
+
+      // svgs
+      //   .selectAll("circle")
+      //   .data(datas3)
+      //   .enter()
+      //   .append("circle")
+
+      //   .attr("class", "cir")
+      //   .attr("cx", (d) => xScale_small(d.date))
+      //   .attr("cy", (d) => yScale_small(d.hour))
+      //   .on("click", function (d, i) {
+      //     console.log(i);
+      //   })
+      //   .filter((d) => d.rank === undefined)
+      //   .attr("r", 2.5)
+      //   .attr("fill", function (d) {
+      //     console.log(d.quality);
+      //     if (d.quality == "good") {
+      //       return "green";
+      //     } else if (d.quality == "bad") {
+      //       return "red";
+      //     } else {
+      //       return "black";
+      //     }
+      //   });
+    }
+    // console.log(allblock);
+
+    // var allcontent = document.querySelectorAll("section");
+    // for (i of allblock) {
+    //   // console.log(i.children[0]);
+    //   if (i.children[0].classList.contains("small_block")) {
+    //     // console.log();
+    //     // console.log();
+    //     var margin3 = { top: 10, right: 10, bottom: 10, left: 10 },
+    //       width3 = 1350 - margin.left - margin.right,
+    //       height3 = 50 - margin.top - margin.bottom;
+    //     var svgs = d3
+    //       .select(i.children[0].children[0].children[2])
+    //       .append("svg")
+    //       .attr("transform", `translate(0,3)`)
+    //       .attr("width", width3 + margin3.left + margin3.right)
+    //       .attr("height", height3 + margin3.top + margin3.bottom)
+    //       .append("g");
+
+    //     // console.log(i.children[0].children[0].children[1]);
+    //     var small_rank = d3
+    //       .select(i.children[0].children[0].children[0])
+    //       .text(datas3[0].rank);
+
+    //     var small_collector = d3
+    //       .select(i.children[0].children[0].children[1])
+    //       .text(datas3[0].collector);
+    //     // var small_score_text = d3
+    //     //   .select(i.children[0].children[0].children[3])
+    //     //   .text(datas3[0].score);
+    //     // var small_score_text = d3.select(".second_score_text").data(datas3);
+    //     // .text((d) => d.score);
+    //     small_score = d3
+    //       .select(i.children[0].children[0].children[3].children[0])
+    //       .attr("value", datas3[0].score);
+
+    //     datas3.forEach((d) => {
+    //       d.date = new Date(d.date);
+    //       //   console.log(formatDay(d.date));
+    //       d.hour = formatTime(d.date);
+    //       // console.log(d.hour);
+    //       var parts = d.hour.split(/:/);
+
+    //       var timePeriodMillis =
+    //         parseInt(parts[0], 10) * 60 * 60 * 1000 +
+    //         parseInt(parts[1], 10) * 60 * 1000 +
+    //         parseInt(parts[2], 10) * 1000;
+    //       d.hour = new Date();
+    //       //   d.hour.setTime(todayMillis + timePeriodMillis);
+    //       d.hour.setTime(todayMillis + timePeriodMillis);
+    //       console.log(d.hour);
+    //     });
+    //     var xScale_small = d3
+    //       .scaleTime()
+    //       .domain(d3.extent(datas3, (d) => d.date))
+    //       .range([margin.left * 6 + 5, width3])
+    //       .nice();
+    //     var xAxis_small = d3
+    //       .axisBottom(xScale_small)
+    //       .tickFormat(d3.timeFormat("%Y/%m/%d"))
+    //       .ticks(4);
+
+    //     // var yScale = d3.axisLeft()
+    //     var yScale_small = d3
+    //       .scaleTime()
+    //       .domain(d3.extent(datas3, (d) => d.hour))
+    //       .range([margin3.bottom, height3 - margin3.bottom])
+    //       .nice(d3.timeDay);
+    //     var yAxis_small = d3
+    //       .axisLeft(yScale_small)
+    //       .tickFormat(d3.timeFormat("%H:%M"))
+
+    //       .ticks(10);
+
+    //     svgs
+    //       .selectAll("circle")
+    //       .data(datas3)
+    //       .enter()
+    //       .append("circle")
+
+    //       .attr("class", "cir")
+    //       .attr("cx", (d) => xScale_small(d.date))
+    //       .attr("cy", (d) => yScale_small(d.hour))
+    //       .on("click", function (d, i) {
+    //         console.log(i);
+    //       })
+    //       .filter((d) => d.rank === undefined)
+    //       .attr("r", 2.5)
+    //       .attr("fill", function (d) {
+    //         console.log(d.quality);
+    //         if (d.quality == "good") {
+    //           return "green";
+    //         } else if (d.quality == "bad") {
+    //           return "red";
+    //         } else {
+    //           return "black";
+    //         }
+    //       });
+    //   }
+    // }
+  </script>
+</html>

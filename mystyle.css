@@ -1,0 +1,273 @@
+.cir:hover {
+  opacity: 0.5;
+}
+/* .key {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    border: 5px solid red;
+    height: 700px;
+  } */
+
+.container {
+  display: flex;
+  font-size: 1.5rem;
+}
+.container #rank {
+  border: 1px solid gainsboro;
+  display: flex;
+  width: 9.5rem;
+  height: 100px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0.15rem;
+}
+.container #collector {
+  border: 1px solid gainsboro;
+  display: flex;
+  width: 9.5rem;
+  height: 100px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0.15rem;
+}
+
+.container #samples {
+  border: 1px solid gainsboro;
+  display: flex;
+  width: 87rem;
+  height: 100px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.15rem;
+}
+.container #samples #sampletext {
+  display: flex;
+  width: 55px;
+  height: 75px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1.5;
+  flex-shrink: 1;
+  margin: 0.25rem;
+}
+
+.container #samples #quality {
+  border: 1px solid gainsboro;
+  display: flex;
+  flex-direction: column;
+  width: 10vw;
+  height: 75px;
+  font-size: 1rem;
+  text-align: center;
+
+  align-items: top;
+  justify-content: center;
+  /* align-self: flex-end; */
+  margin: 0.25rem;
+}
+.container #samples #quality #qualitytexts {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  height: 25px;
+  font-size: 1rem;
+  text-align: center;
+  align-items: center;
+  align-items: top;
+  justify-content: space-evenly;
+  /* align-self: flex-end; */
+  margin: 0.25rem;
+}
+#qualitytexts > div {
+  display: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container #samples #quality #qualitycolor {
+  display: flex;
+  flex-direction: row;
+  width: 65px;
+  height: 25px;
+  font-size: 1rem;
+  text-align: center;
+
+  align-items: top;
+  justify-content: center;
+  /* align-self: flex-end; */
+  margin: 0.25rem;
+}
+#BlackDraw {
+  width: 1rem;
+  height: 1rem;
+  background-color: black;
+  border-radius: 50%;
+}
+#GreenDraw {
+  width: 1rem;
+  height: 1rem;
+  background-color: green;
+  border-radius: 50%;
+}
+#RedDraw {
+  width: 1rem;
+  height: 1rem;
+  background-color: red;
+  border-radius: 50%;
+}
+#TotalScore {
+  border: 1px solid gainsboro;
+  display: flex;
+  width: 7.75vw;
+  height: 100px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0.25rem;
+}
+
+.contain_box {
+  display: flex;
+  margin: 2px;
+  width: 8vw;
+  /* height: 100%; */
+  font-size: 1.45rem;
+  border: 1px solid gainsboro;
+  justify-content: center;
+  align-items: center;
+}
+.large {
+  display: flex;
+  margin: 2px;
+  width: 70vw;
+  /* height: 100%; */
+  border: 1px solid gainsboro;
+}
+.detailactive {
+  margin: 0.25rem;
+  border: 3px solid blue;
+  width: 97 vw;
+}
+.main_progress {
+  height: 1.25rem;
+  width: 105px;
+  background: lightgrey;
+  margin: 3px;
+}
+
+.active {
+  background-color: none;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  border: 5px solid red;
+  height: 700px;
+}
+
+.row_container1 {
+  display: flex;
+  justify-content: center;
+  height: 95%;
+}
+.row_container2 {
+  display: flex;
+  justify-content: center;
+  height: 40vh;
+}
+.row_container_second1 {
+  display: flex;
+
+  height: 60vh;
+}
+.small_block {
+  /* border: 1px solid gray; */
+  display: flex;
+  height: 9vh;
+  width: 97.5vw;
+  margin: 0.15rem;
+}
+.second_block {
+  border: 1px solid gray;
+  display: flex;
+  height: 14vh;
+  width: 98vw;
+
+  margin: 0.15rem;
+}
+.second_progress {
+  height: 1rem;
+  width: 105px;
+  background: lightgrey;
+  margin: 3px;
+}
+
+.row {
+  display: flex;
+  height: 95%;
+  width: 7.9vw;
+  margin: 0.15rem;
+  border: 1px solid gray;
+}
+.largerow {
+  display: flex;
+  width: 72.5vw;
+  margin: 0.15rem;
+  border: 1px solid gray;
+}
+.displayrow {
+  display: flex;
+  width: 8vw;
+  margin: 0.15rem;
+  border: 1px solid gray;
+}
+.detailcontainer {
+  display: flex;
+  height: 95%;
+  width: 100vw;
+  margin: 0.15rem;
+  border: 5px solid blue;
+}
+
+.hide_detailcontainer {
+  display: none;
+  /* width: 100%; */
+}
+.row_container2 > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.small_block > .row_container1 > .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.second_block > .row_container1 > .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+section > div:hover {
+  border: 5px solid red;
+}
+.row_container_second > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.small_progress {
+  height: 0.75rem;
+  width: 105px;
+  background: lightgrey;
+  margin: 3px;
+}
