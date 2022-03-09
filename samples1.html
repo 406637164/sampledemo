@@ -253,8 +253,8 @@
             this.children[0].classList.toggle("row_container2");
             this.children[1].classList.toggle("row_container1");
             this.children[1].classList.toggle("row_container2");
-            this.children[1].children[0].classList.toggle("detailcontainer");
-            this.children[1].classList.toggle("hide_detailcontainer");
+            // this.children[1].children[0].classList.toggle("deta  ilcontainer");
+            // this.children[1].classList.toggle("hide_detailcontainer");
             // this.children[1].children[0].classList.toggle("detailcontainer");
             // this.children[1].children[0].classList.toggle("detailcontainer");
           } else if (!this.classList.contains("active")) {
@@ -262,8 +262,8 @@
             this.children[0].classList.toggle("row_container2");
             this.children[1].classList.toggle("row_container1");
             this.children[1].classList.toggle("row_container2");
-            this.children[1].children[0].classList.toggle("detailcontainer");
-            this.children[1].classList.toggle("hide_detailcontainer");
+            // this.children[1].children[0].classList.toggle("detailcontainer");
+            // this.children[1].classList.toggle("hide_detailcontainer");
             // this.children[1].children[0].classList.toggle("detailcontainer");
           }
         });
@@ -357,7 +357,34 @@
         .attr("cx", (d) => xScale_small(d.date))
         .attr("cy", (d) => yScale_small(d.hour))
         .on("click", function (d, i) {
-          console.log(i);
+          // console.log(
+          //   this.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].classList.toggle(
+          //     "hide_detailcontainer"
+          //   )
+          // );
+          console.log(
+            this.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].classList.toggle(
+              "hide_detailcontainer"
+            )
+          );
+          this.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].classList.toggle(
+            "detailactive"
+          );
+          // console.log(
+          //   this.parentNode.parentNode.parentNode.parentNode.parentNode
+          //     .children[1].classList
+          // );
+          // console.log(
+          //   this.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].classList.toggle(
+          //     "detailactive"
+          //   )
+          // );
+          // this.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].toggle(
+          //   "hide_detailcontainer"
+          // );
+          // this.parentNode.parentNode.parentNode.parentNode.parentNode.children[1].toggle(
+          //   "detailactive"
+          // );
         })
         .filter((d) => d.rank === undefined)
         .attr("r", 10.5)

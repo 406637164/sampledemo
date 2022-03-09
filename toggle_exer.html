@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css" />
+    <!-- <link rel="stylesheet" href="style2.css" /> -->
+    <link rel="stylesheet" href="style3.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="rank">Rank</div>
+        <div id="collector">Collector</div>
+        <div id="samples">
+          <div id="sampletext">Sample</div>
+          <div id="quality">
+            <div>Quality</div>
+            <div id="qualitytexts">
+              <div>good</div>
+              &nbsp; &nbsp;
+              <div>bad</div>
+            </div>
+            <div id="qualitycolor">
+              <div id="GreenDraw"></div>
+              &nbsp; &nbsp; &nbsp; &nbsp;
+              <div id="RedDraw"></div>
+            </div>
+          </div>
+        </div>
+        <div id="TotalScore">
+          <p>Total<br />Score</p>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="small_block">
+        <div class="row_container1">
+          <div class="small_rank row"></div>
+          <div class="small_collector row"></div>
+          <div class="small_sample row largerow"></div>
+          <div class="small_score row">
+            <progress class="small_progress" max="100"></progress>
+            <span class="small_score_text"></span>
+          </div>
+        </div>
+        <div class="row_container1 hide_detailcontainer">
+          <div class="row"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="second_block">
+        <div class="row_container1">
+          <div class="second_rank row"></div>
+          <div class="second_collector row"></div>
+          <div class="second_sample row largerow"></div>
+          <div class="second_score row">
+            <progress class="second_progress" max="100"></progress>
+            <span class="second_score_text"></span>
+          </div>
+        </div>
+        <div class="row_container1 hide_detailcontainer">
+          <div class="row"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="main_block active">
+        <div class="row_container2">
+          <div class="main_rank row"></div>
+          <div class="main_collector row"></div>
+          <div class="main_sample row largerow"></div>
+          <div class="main_score row">
+            <progress class="main_progress" max="100"></progress>
+            <span class="main_score_text"></span>
+          </div>
+        </div>
+
+        <div class="row_container2">
+          <div class="row detailcontainer"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="second_block">
+        <div class="row_container1">
+          <div class="second_rank row"></div>
+          <div class="second_collector row"></div>
+          <div class="second_sample row largerow"></div>
+          <div class="second_score row">
+            <progress class="second_progress" max="100"></progress>
+            <span class="second_score_text"></span>
+          </div>
+        </div>
+        <div class="row_container1 hide_detailcontainer">
+          <div class="row"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="small_block">
+        <div class="row_container1">
+          <div class="small_rank row"></div>
+          <div class="small_collector row"></div>
+          <div class="small_sample row largerow"></div>
+          <div class="small_score row">
+            <progress class="small_progress" max="100"></progress>
+            <span class="small_score_text"></span>
+          </div>
+        </div>
+        <div class="row_container1 hide_detailcontainer">
+          <div class="row"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- <script src="app1.js"></script> -->
+  <!-- <script src="app2.js"></script> -->
+  <!-- <script src="app4.js"></script> -->
+  <script src="app5.js"></script>
+  <script>
+    var allblock = document.querySelectorAll("section");
+    // console.log(allblock);
+    for (i of allblock) {
+      if (i.children[0].classList.contains("small_block")) {
+        // console.log(i.children[0].classList.contains("small_block"));
+        i.children[0].addEventListener("click", function () {
+          console.log(this);
+          this.classList.toggle("small_block");
+          this.classList.toggle("active");
+
+          // small_block.childNodes.classList.toggle("row_container2")
+
+          if (this.classList.contains("active")) {
+            this.children[0].classList.toggle("row_container1");
+            this.children[0].classList.toggle("row_container2");
+            this.children[1].classList.toggle("row_container1");
+            this.children[1].classList.toggle("row_container2");
+            this.children[1].children[0].classList.toggle("detailcontainer");
+            this.children[1].classList.toggle("hide_detailcontainer");
+            // this.children[1].children[0].classList.toggle("detailcontainer");
+            // this.children[1].children[0].classList.toggle("detailcontainer");
+          } else if (!this.classList.contains("active")) {
+            this.children[0].classList.toggle("row_container1");
+            this.children[0].classList.toggle("row_container2");
+            this.children[1].classList.toggle("row_container1");
+            this.children[1].classList.toggle("row_container2");
+            this.children[1].children[0].classList.toggle("detailcontainer");
+            this.children[1].classList.toggle("hide_detailcontainer");
+            // this.children[1].children[0].classList.toggle("detailcontainer");
+          }
+        });
+      } else if (i.children[0].classList.contains("second_block")) {
+        i.children[0].addEventListener("click", function () {
+          this.classList.toggle("second_block");
+          this.classList.toggle("active");
+          if (this.classList.contains("active")) {
+            this.children[0].classList.toggle("row_container1");
+            this.children[0].classList.toggle("row_container2");
+            this.children[1].classList.toggle("row_container1");
+            this.children[1].classList.toggle("row_container2");
+            this.children[1].children[0].classList.toggle("detailcontainer");
+            this.children[1].classList.toggle("hide_detailcontainer");
+            // this.children[1].children[0].classList.toggle("detailcontainer");
+            // this.children[1].children[0].classList.toggle("detailcontainer");
+          } else if (!this.classList.contains("active")) {
+            this.children[0].classList.toggle("row_container1");
+            this.children[0].classList.toggle("row_container2");
+            this.children[1].classList.toggle("row_container1");
+            this.children[1].classList.toggle("row_container2");
+            this.children[1].children[0].classList.toggle("detailcontainer");
+            this.children[1].classList.toggle("hide_detailcontainer");
+          }
+          // console.log(this);
+        });
+      }
+    }
+
+    // var small_block = document.querySelector(".small_block");
+    // small_block.addEventListener("click", function () {
+    //   small_block.classList.toggle("small_block");
+    //   small_block.classList.toggle("active");
+    //   // small_block.childNodes.classList.toggle("row_container2")
+    //   if (small_block.classList.contains("active")) {
+    //     this.children[0].classList.toggle("row_container1");
+    //     this.children[0].classList.toggle("row_container2");
+    //     this.children[1].classList.toggle("row_container1");
+    //     this.children[1].classList.toggle("row_container2");
+    //     this.children[1].children[0].classList.toggle("detailcontainer");
+    //     this.children[1].classList.toggle("hide_detailcontainer");
+
+    //     // this.children[1].children[0].classList.toggle("detailcontainer");
+    //     // this.children[1].children[0].classList.toggle("detailcontainer");
+    //   } else if (!small_block.classList.contains("active")) {
+    //     this.children[0].classList.toggle("row_container1");
+    //     this.children[0].classList.toggle("row_container2");
+    //     this.children[1].classList.toggle("row_container1");
+    //     this.children[1].classList.toggle("row_container2");
+    //     this.children[1].children[0].classList.toggle("detailcontainer");
+    //     this.children[1].classList.toggle("hide_detailcontainer");
+    //     // this.children[1].children[0].classList.toggle("detailcontainer");
+    //   }
+    //   //     var displaysmallblock = document.querySelectorAll(".row_container1>.row");
+    //   //  for (i of displaysmallblock){
+    //   //     //  console.log(i);
+    //   //     i.classList.toggle("largesrow")
+    //   //  }
+    // });
+    // var second_block = document.querySelector(".second_block");
+    // second_block.addEventListener("click", function () {
+    //   second_block.classList.toggle("second_block");
+    //   second_block.classList.toggle("active");
+    //   // small_block.childNodes.classList.toggle("row_container2")
+    //   if (second_block.classList.contains("active")) {
+    //     this.children[0].classList.toggle("row_container1");
+    //     this.children[0].classList.toggle("row_container2");
+    //     this.children[1].classList.toggle("row_container1");
+    //     this.children[1].classList.toggle("row_container2");
+    //     this.children[1].children[0].classList.toggle("detailcontainer");
+    //     this.children[1].classList.toggle("hide_detailcontainer");
+
+    //     // this.children[1].children[0].classList.toggle("detailcontainer");
+    //     // this.children[1].children[0].classList.toggle("detailcontainer");
+    //   } else if (!second_block.classList.contains("active")) {
+    //     this.children[0].classList.toggle("row_container1");
+    //     this.children[0].classList.toggle("row_container2");
+    //     this.children[1].classList.toggle("row_container1");
+    //     this.children[1].classList.toggle("row_container2");
+    //     this.children[1].children[0].classList.toggle("detailcontainer");
+    //     this.children[1].classList.toggle("hide_detailcontainer");
+    //     // this.children[1].children[0].classList.toggle("detailcontainer");
+    //   }
+    // });
+    var allcontent = document.querySelectorAll("section");
+    for (i of allblock) {
+      // console.log(i.children[0]);
+      if (i.children[0].classList.contains("small_block")) {
+        // console.log();
+        // console.log();
+        var margin3 = { top: 10, right: 10, bottom: 10, left: 10 },
+          width3 = 1350 - margin.left - margin.right,
+          height3 = 50 - margin.top - margin.bottom;
+        var svgs = d3
+          .select(i.children[0].children[0].children[2])
+          .append("svg")
+          .attr("transform", `translate(0,3)`)
+          .attr("width", width3 + margin3.left + margin3.right)
+          .attr("height", height3 + margin3.top + margin3.bottom)
+          .append("g");
+        var datas3 = [
+          { collector: "naturalist14740", rank: 1, score: 90 },
+          { date: "2020-04-23 00:39:28", quality: "good" },
+
+          { date: "2020-04-24 04:10:31", quality: "good" },
+          { date: "2020-04-25 01:10:31", quality: "good" },
+          { date: "2020-04-26 18:24:00", quality: "good" },
+          { date: "2020-04-27 13:24:00", quality: "good" },
+        ];
+        // console.log(i.children[0].children[0].children[1]);
+        var small_rank = d3
+          .select(i.children[0].children[0].children[0])
+          .text(datas3[0].rank);
+
+        var small_collector = d3
+          .select(i.children[0].children[0].children[1])
+          .text(datas3[0].collector);
+        // var small_score_text = d3
+        //   .select(i.children[0].children[0].children[3])
+        //   .text(datas3[0].score);
+        // var small_score_text = d3.select(".second_score_text").data(datas3);
+        // .text((d) => d.score);
+        small_score = d3
+          .select(i.children[0].children[0].children[3].children[0])
+          .attr("value", datas3[0].score);
+
+        datas3.forEach((d) => {
+          d.date = new Date(d.date);
+          //   console.log(formatDay(d.date));
+          d.hour = formatTime(d.date);
+          // console.log(d.hour);
+          var parts = d.hour.split(/:/);
+
+          var timePeriodMillis =
+            parseInt(parts[0], 10) * 60 * 60 * 1000 +
+            parseInt(parts[1], 10) * 60 * 1000 +
+            parseInt(parts[2], 10) * 1000;
+          d.hour = new Date();
+          //   d.hour.setTime(todayMillis + timePeriodMillis);
+          d.hour.setTime(todayMillis + timePeriodMillis);
+          console.log(d.hour);
+        });
+        var xScale_small = d3
+          .scaleTime()
+          .domain(d3.extent(datas3, (d) => d.date))
+          .range([margin.left * 6 + 5, width3])
+          .nice();
+        var xAxis_small = d3
+          .axisBottom(xScale_small)
+          .tickFormat(d3.timeFormat("%Y/%m/%d"))
+          .ticks(4);
+
+        // var yScale = d3.axisLeft()
+        var yScale_small = d3
+          .scaleTime()
+          .domain(d3.extent(datas3, (d) => d.hour))
+          .range([margin3.bottom, height3 - margin3.bottom])
+          .nice(d3.timeDay);
+        var yAxis_small = d3
+          .axisLeft(yScale_small)
+          .tickFormat(d3.timeFormat("%H:%M"))
+
+          .ticks(10);
+
+        svgs
+          .selectAll("circle")
+          .data(datas3)
+          .enter()
+          .append("circle")
+
+          .attr("class", "cir")
+          .attr("cx", (d) => xScale_small(d.date))
+          .attr("cy", (d) => yScale_small(d.hour))
+          .on("click", function (d, i) {
+            console.log(i);
+          })
+          .filter((d) => d.rank === undefined)
+          .attr("r", 2.5)
+          .attr("fill", function (d) {
+            console.log(d.quality);
+            if (d.quality == "good") {
+              return "green";
+            } else if (d.quality == "bad") {
+              return "red";
+            } else {
+              return "black";
+            }
+          });
+      } else if (i.children[0].classList.contains("second_block")) {
+        // console.log(d3.select(i.children[0].children[0].children[2]));
+        var margin2 = { top: 10, right: 10, bottom: 10, left: 10 },
+          width2 = 1350 - margin.left - margin.right,
+          height2 = 100 - margin.top - margin.bottom;
+        var svg2 = d3
+          .select(i.children[0].children[0].children[2])
+          .append("svg")
+          .attr("transform", `translate(0,3)`)
+          .attr("width", width2 + margin2.left + margin2.right)
+          .attr("height", height2 + margin2.top + margin2.bottom)
+          .append("g");
+        var datas2 = [
+          { collector: "v9320032", rank: 2, score: 90 },
+          { date: "2020-04-23 00:39:28", quality: "good" },
+
+          { date: "2020-04-24 01:10:31", quality: "good" },
+          { date: "2020-04-25 01:10:31", quality: "good" },
+          { date: "2020-04-26 18:24:00", quality: "bad" },
+          { date: "2020-04-27 13:24:00", quality: "good" },
+        ];
+        // console.log(i.children[0].children[0].children[1]);
+        var second_rank = d3
+          .select(i.children[0].children[0].children[0])
+          .text(datas2[0].rank);
+
+        var second_collector = d3
+          .select(i.children[0].children[0].children[1])
+          .text(datas2[0].collector);
+        // var small_score_text = d3
+        //   .select(i.children[0].children[0].children[3])
+        //   .text(datas3[0].score);
+        // var small_score_text = d3.select(".second_score_text").data(datas3);
+        // .text((d) => d.score);
+        var second_score = d3
+          .select(i.children[0].children[0].children[3].children[0])
+          .attr("value", datas2[0].score);
+
+        datas2.forEach((d) => {
+          d.date = new Date(d.date);
+          //   console.log(formatDay(d.date));
+          d.hour = formatTime(d.date);
+          // console.log(d.hour);
+          var parts = d.hour.split(/:/);
+
+          var timePeriodMillis =
+            parseInt(parts[0], 10) * 60 * 60 * 1000 +
+            parseInt(parts[1], 10) * 60 * 1000 +
+            parseInt(parts[2], 10) * 1000;
+          d.hour = new Date();
+          //   d.hour.setTime(todayMillis + timePeriodMillis);
+          d.hour.setTime(todayMillis + timePeriodMillis);
+          console.log(d.hour);
+        });
+        var xScale_second = d3
+          .scaleTime()
+          .domain(d3.extent(datas3, (d) => d.date))
+          .range([margin2.left * 6 + 5, width2])
+          .nice();
+        var xAxis_second = d3
+          .axisBottom(xScale_second)
+          .tickFormat(d3.timeFormat("%Y/%m/%d"))
+          .ticks(4);
+
+        // var yScale = d3.axisLeft()
+        var yScale_second = d3
+          .scaleTime()
+          .domain(d3.extent(datas3, (d) => d.hour))
+          .range([margin2.bottom, height2 - margin2.bottom])
+          .nice(d3.timeDay);
+        var yAxis_second = d3
+          .axisLeft(yScale_second)
+          .tickFormat(d3.timeFormat("%H:%M"))
+
+          .ticks(10);
+
+        svg2
+          .selectAll("circle")
+          .data(datas2)
+          .enter()
+          .append("circle")
+
+          .attr("class", "cir")
+          .attr("cx", (d) => xScale_second(d.date))
+          .attr("cy", (d) => yScale_second(d.hour))
+          .on("click", function (d, i) {
+            console.log(i);
+          })
+          .filter((d) => d.rank === undefined)
+          .attr("r", 3.5)
+          .attr("fill", function (d) {
+            console.log(d.quality);
+            if (d.quality == "good") {
+              return "green";
+            } else if (d.quality == "bad") {
+              return "red";
+            } else {
+              return "black";
+            }
+          });
+      }
+    }
+  </script>
+</html>

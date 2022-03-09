@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="style3.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="rank">Rank</div>
+        <div id="collector">Collector</div>
+        <div id="samples">
+          <div id="sampletext">Sample</div>
+          <div id="quality">
+            <div>Quality</div>
+            <div id="qualitytexts">
+              <div>good</div>
+              &nbsp; &nbsp;
+              <div>bad</div>
+            </div>
+            <div id="qualitycolor">
+              <div id="GreenDraw"></div>
+              &nbsp; &nbsp; &nbsp; &nbsp;
+              <div id="RedDraw"></div>
+            </div>
+          </div>
+        </div>
+        <div id="TotalScore">
+          <p>Total<br />Score</p>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="small_block">
+        <div class="small_rank"></div>
+        <div class="small_collector"></div>
+        <div class="small_sample"></div>
+        <div class="small_score"></div>
+      </div>
+    </section>
+    <section>
+      <div class="second_block">
+        <div class="row_container">
+          <div class="second_box second_rank">
+            <span></span>
+          </div>
+          <div class="second_box second_collector">
+            <span></span>
+          </div>
+          <div class="largesecond second_sample">
+            <span></span>
+          </div>
+          <div class="second_box second_score">
+            <progress class="second_progress" max="100"></progress>
+            <span class="second_score_text"></span>
+          </div>
+        </div>
+        <div class="row_container detailactive" id="seconddetails">
+          <div class="detail"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div id="main_key" class="active">
+        <div class="row_container">
+          <div class="contain_box">
+            <span class="main_rank"> </span>
+          </div>
+          <div class="contain_box">
+            <span class="main_collector"> </span>
+          </div>
+          <div class="contain_box large"></div>
+          <div class="contain_box">
+            <progress class="main_progress" max="100"></progress>
+            <span class="main_score_text"></span>
+          </div>
+        </div>
+
+        <div class="row_container detailactive" id="details">
+          <div class="detail"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="second_block">
+        <div class="row_container">
+          <div class="second_box second_rank">
+            <span></span>
+          </div>
+          <div class="second_box second_collector">
+            <span></span>
+          </div>
+          <div class="largesecond second_sample">
+            <span></span>
+          </div>
+          <div class="second_box second_score">
+            <progress class="second_progress" max="100"></progress>
+            <span class="second_score_text"></span>
+          </div>
+        </div>
+        <div class="row_container detailactive" id="seconddetails">
+          <div class="detail"></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="small_block">
+        <div class="small_rank"></div>
+        <div class="small_collector"></div>
+        <div class="small_sample"></div>
+        <div class="small_score"></div>
+      </div>
+    </section>
+  </body>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="app1.js"></script>
+  <script src="app2.js"></script>
+  <!-- <script src="app4.js"></script> -->
+  <script></script>
+</html>
