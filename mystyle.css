@@ -152,6 +152,8 @@
   margin: 0.25rem;
   border: 3px solid blue;
   width: 97 vw;
+  display: flex;
+  flex-direction: column;
 }
 .main_progress {
   height: 1.25rem;
@@ -176,7 +178,7 @@
 }
 .row_container2 {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   height: 40vh;
 }
 .row_container_second1 {
@@ -270,4 +272,190 @@ section > div:hover {
   width: 105px;
   background: lightgrey;
   margin: 3px;
+}
+
+.detailactive > .row_container1 > .detail_container {
+  border: 1px solid gainsboro;
+  display: flex;
+  width: 17rem;
+  height: 100px;
+  font-size: 1.75rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#detail1 {
+  height: 7rem;
+}
+.detailactive > .row_container1 > .detail_container:first-child {
+  border: 1px solid gainsboro;
+  display: flex;
+  width: 29.7rem;
+  height: 100px;
+  font-size: 1.75rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#rows2 > .detail_quality {
+  border: 1px solid gainsboro;
+  display: flex;
+  width: 20rem;
+  height: 95%;
+  font-size: 1.75rem;
+  text-align: center;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+#rows2 > .detail_content > .row_content1 > .quality_block_style {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gainsboro;
+  height: 100%;
+  width: 12.6rem;
+  justify-content: flex-end;
+  /* align-items: flex-end; */
+}
+
+#rows2
+  > .detail_content
+  > .row_content1
+  > .quality_block_style
+  > .quality_block {
+  border: 1px solid gainsboro;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 40rem;
+  /* height: 95%; */
+  font-size: 1.75rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#rows2 > .problem_block_style {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.problem_block_style > .detail_container {
+  border: 1px solid gainsboro;
+  display: flex;
+  width: 17rem;
+  height: 6rem;
+  font-size: 1.75rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+/* .row_container2 > .problem_block_style {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gainsboro;
+  height: 70%;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.row_container2 > .problem_block_style > .problem_block {
+  border: 1px solid gainsboro;
+  display: flex;
+  width: 17rem;
+  height: 4.5rem;
+  height: 95%;
+  font-size: 1.75rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+} */
+#rows2 > div > .method_block_style {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.method_block_style > .detail_container {
+  border: 1px solid gainsboro;
+  display: flex;
+  width: 17.5rem;
+  height: 6rem;
+  font-size: 1.75rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#rows2 > .photo_picture {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#rows2 > .detail_content > .row_content1 > .photo_block_style {
+  width: 17.2rem;
+  height: 32vh;
+}
+
+#rows2 > .detail_content > .row_content1 > .map_block_style {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 17.2rem;
+  height: 32vh;
+}
+#rows2 .detail_content {
+  width: 100%;
+  height: 40vh;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+#rows2 > .detail_content > .row_content1 > .score_block_style {
+  width: 17rem;
+  height: 32vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#rows2 > .detail_content > .row_content1 {
+  display: flex;
+  height: 32vh;
+  justify-content: flex-end;
+
+  padding: 0.25rem;
+}
+#rows2 > .detail_content > .row_content2 {
+  width: 100%;
+  height: 30%;
+  display: flex;
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+#rows2 .detail_content > .row_content2 > div {
+  /* margin: 0.45rem; */
+  /* padding: 11.45rem; */
+  display: flex;
+  height: 80%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+#rows2 > .detail_content > .row_content2 > div > input {
+  background-color: #4caf50; /* Green */
+  margin: 0.25rem;
+
+  padding: 1.45rem;
+  border: none;
+  height: 80%;
+  color: white;
+  border-radius: 50px;
+  padding: 15px 32px;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
