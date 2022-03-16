@@ -191,24 +191,10 @@ function showdata2(data) {
     .selectAll("text")
     .style("font-size", "15px");
 
-  const tooltip = d3
-    .select("#my_dataviz")
-    .append("div")
-    .style("opacity", 0)
-    .attr("class", "tooltip")
-    .style("background-color", "white")
-    .style("border", "solid")
-    .style("border-width", "1px")
-    .style("border-radius", "5px")
-    .style("padding", "10px");
   // A function that change this tooltip when the user hover a point.
   // Its opacity is set to 1: we can now see it. Plus it set the text and position of tooltip depending on the datapoint (d)
+  var div = d3.select("body").append("div");
 
-  var div = d3
-    .select("body")
-    .append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
   svg
     .append("g")
     .attr("transform", "translate(0,20)")
@@ -225,6 +211,8 @@ function showdata2(data) {
     .attr("cy", (d) => yScale(d.hour))
     .on("mouseover", function (event, d) {
       div
+        .attr("class", "tooltip")
+        .style("opacity", 0)
         .transition()
         .duration(200)
         .style("opacity", 0.9)
