@@ -1,3 +1,6 @@
+* {
+  font-family: 微軟正黑體;
+}
 .cir:hover {
   opacity: 0.5;
 }
@@ -12,6 +15,10 @@
 .container {
   display: flex;
   font-size: 1.5rem;
+}
+#main_collector {
+  display: inline-block;
+  font-size: 1.25rem;
 }
 .container #rank {
   border: 1px solid gainsboro;
@@ -46,7 +53,7 @@
 }
 .container #samples #sampletext {
   display: flex;
-  width: 55px;
+  width: 50px;
   height: 75px;
   text-align: center;
   justify-content: center;
@@ -148,8 +155,9 @@
   /* height: 100%; */
   border: 1px solid gainsboro;
 }
-.detailactive {
+.active .detailactive {
   margin: 0.25rem;
+  height: 50vh;
   border: 3px solid blue;
   width: 97 vw;
   display: flex;
@@ -165,21 +173,22 @@
 .active {
   background-color: none;
   display: flex;
+
   flex-direction: column;
-  border: 1px solid gray;
+
   border: 5px solid red;
-  height: 750px;
+  height: 870px;
 }
 
 .row_container1 {
   display: flex;
-  justify-content: center;
-  height: 100%;
+  justify-content: flex-start;
+  height: 90%;
 }
 .row_container2 {
   display: flex;
   /* justify-content: center; */
-  height: 40vh;
+  height: 55vh;
 }
 .row_container_second1 {
   display: flex;
@@ -277,25 +286,42 @@ section > div:hover {
 .detailactive > .row_container1 > .detail_container {
   border: 1px solid gainsboro;
   display: flex;
-  width: 17rem;
+  width: 19rem;
   height: 100px;
   font-size: 1.75rem;
-  text-align: center;
+  text-align: left;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
+
 #detail1 {
-  height: 7rem;
+  height: 11vh;
 }
 .detailactive > .row_container1 > .detail_container:first-child {
   border: 1px solid gainsboro;
   display: flex;
-  width: 29.7rem;
+  width: 29.4rem;
   height: 100px;
+  flex-direction: column;
   font-size: 1.75rem;
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+
+.detailactive > .row_container1 > .detail_container:last-child {
+  border: 1px solid gainsboro;
+  display: flex;
+  width: 7.9vw;
+  height: 100px;
+  flex-direction: column;
+  font-size: 1.75rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.detailactive > .row_container1 > .detail_container:first-child > div {
+  font-size: 1.25rem;
 }
 #rows2 > .detail_quality {
   border: 1px solid gainsboro;
@@ -307,16 +333,47 @@ section > div:hover {
   /* align-items: center; */
   /* justify-content: center; */
 }
+
+#qualitys_title {
+  margin-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 16vw;
+  height: 31.5vh;
+  border: 1px solid gainsboro;
+}
+#qualitys_title > div:first-child {
+  font-size: 1.5rem;
+  text-align: left;
+  font-size: 1rem;
+  margin-top: 4.5rem;
+}
+#qualitys_title > div:last-child {
+  margin-top: 2.5rem;
+}
+/* #qualitys_title > div {
+  clear: both;
+  text-align: left;
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+} */
 #rows2 > .detail_content > .row_content1 > .quality_block_style {
   display: flex;
   flex-direction: column;
   border: 1px solid gainsboro;
   height: 100%;
-  width: 12.6rem;
+  width: 12.3rem;
   justify-content: flex-end;
+
   /* align-items: flex-end; */
 }
-
+#rows2 > .row_container1 > div {
+  margin: 0.25rem;
+}
 #rows2
   > .detail_content
   > .row_content1
@@ -339,13 +396,25 @@ section > div:hover {
   align-items: flex-start;
   justify-content: flex-start;
 }
+
+#rows2 > .detail_content > .row_content1 > .problem_block_style {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gainsboro;
+  height: 100%;
+  width: 19rem;
+  justify-content: flex-end;
+
+  /* align-items: flex-end; */
+}
 .problem_block_style > .detail_container {
   border: 1px solid gainsboro;
   display: flex;
-  width: 17rem;
+  flex-direction: column;
+  width: 100%;
   height: 6rem;
-  font-size: 1.75rem;
-  text-align: center;
+  font-size: 1.45rem;
+  text-align: left;
   align-items: center;
   justify-content: center;
 }
@@ -392,29 +461,56 @@ section > div:hover {
   justify-content: flex-start;
 }
 #rows2 > .detail_content > .row_content1 > .photo_block_style {
-  width: 17.2rem;
-  height: 33vh;
+  width: 19rem;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: 1px solid gainsboro;
 }
+img {
+  width: 80%;
+  height: 80%;
+  animation-duration: 1.5s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    background-color: aliceblue;
+    opacity: 0.2;
+  }
 
+  to {
+    opacity: 1;
+  }
+}
 #rows2 > .detail_content > .row_content1 > .map_block_style {
   align-items: center;
   display: flex;
   justify-content: center;
-  width: 17.2rem;
-  height: 33vh;
+  border: 1px solid gainsboro;
+  width: 19rem;
+  height: 100%;
 }
 #rows2 .detail_content {
   width: 100%;
+  height: 39vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#rows2 .detail_content:first-child {
+  width: 40%;
   height: 40vh;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
 #rows2 > .detail_content > .row_content1 > .score_block_style {
-  width: 17rem;
-  height: 32vh;
+  width: 7.9vw;
+  height: 31.5vh;
   display: flex;
-  justify-content: center;
+  border: 1px solid gainsboro;
   align-items: center;
 }
 #rows2 > .detail_content > .row_content1 {
@@ -425,8 +521,8 @@ section > div:hover {
   padding: 0.25rem;
 }
 #rows2 > .detail_content > .row_content2 {
-  width: 100%;
-  height: 50%;
+  width: 96%;
+  height: 20%;
   display: flex;
 
   text-align: center;
@@ -442,20 +538,33 @@ section > div:hover {
   justify-content: center;
   align-items: center;
 }
-#rows2 > .detail_content > .row_content2 > div > input {
-  background-color: #4caf50; /* Green */
-  margin: 0.25rem;
 
-  padding: 1.45rem;
+#rows2 > .detail_content > .row_content2 > div > input {
+  margin-left: 5rem;
+  width: 100px;
+  height: 35px;
   border: none;
-  height: 80%;
-  color: white;
-  border-radius: 50px;
-  padding: 15px 32px;
+  outline: none;
+  background: green;
+  color: #fff;
+  font-size: 22px;
+  border-radius: 40px;
   text-align: center;
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  box-shadow: 0 6px 20px -5px greenyellow;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  padding: 2px;
+  font: 25px 標楷體;
+  color: rgb(53, 53, 54);
+  background-color: greenyellow;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
 }
