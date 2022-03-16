@@ -305,6 +305,7 @@ section > div:hover {
   flex-direction: column;
   font-size: 1.75rem;
   text-align: center;
+
   align-items: center;
   justify-content: center;
 }
@@ -314,6 +315,7 @@ section > div:hover {
   display: flex;
   width: 7.9vw;
   height: 100px;
+
   flex-direction: column;
   font-size: 1.75rem;
   text-align: center;
@@ -342,7 +344,7 @@ section > div:hover {
   align-items: center;
   justify-content: flex-start;
   width: 16vw;
-  height: 80.5%;
+  height: 80%;
   margin-right: 0;
   border: 1px solid gainsboro;
 }
@@ -390,6 +392,7 @@ section > div:hover {
   font-size: 1.75rem;
   text-align: center;
   align-items: center;
+
   justify-content: center;
 }
 #rows2 > .problem_block_style {
@@ -415,6 +418,7 @@ section > div:hover {
   flex-direction: column;
   width: 100%;
   height: 6rem;
+
   font-size: 1.45rem;
   text-align: left;
   align-items: center;
@@ -560,13 +564,16 @@ img {
 }
 div.tooltip {
   position: absolute;
+  margin-left: 20px;
+  margin-bottom: 20px;
   text-align: center;
   width: 200px;
   height: 200px;
   padding: 2px;
   font: 25px 標楷體;
-  color: rgb(53, 53, 54);
-  background-color: greenyellow;
+
+  color: #fff;
+  background-color: rgb(230, 129, 93);
   border: 0px;
   border-radius: 8px;
   pointer-events: none;
