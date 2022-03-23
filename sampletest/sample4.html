@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    
+    <!-- <link rel="stylesheet" href="style2.css" /> -->
+    <!-- <link rel="stylesheet" href="style3.css" /> -->
+    <link rel="stylesheet" href="js/mystyle.css" />
+  </head>
+  <body>
+  
+
+    <header>
+      <div class="container">
+        <div id="rank">Rank</div>
+        <div id="collector">Collector</div>
+        <div id="samples">
+          <div id="sampletext">Sample</div>
+          <div id="quality">
+            <div>Quality</div>
+            <div id="qualitytexts">
+              <div>
+                <div><span>unknown</span></div>
+                <div id="BlackDraw"></div>
+              </div>
+              <div>
+                <div><span>good</span></div>
+                <div id="GreenDraw"></div>
+              </div>
+
+              <div>
+                <div><span>bad</span></div>
+                <div id="RedDraw"></div>
+              </div>
+            </div>
+            <!-- <div id="qualitycolor">
+              <div id="BlackDraw"></div>
+              &nbsp; &nbsp; &nbsp;
+              <div id="GreenDraw"></div>
+              &nbsp; &nbsp; &nbsp; &nbsp;
+              <div id="RedDraw"></div>
+            </div> -->
+          </div>
+        </div>
+        <div id="TotalScore">
+          <p>Total<br />Score</p>
+        </div>
+      </div>
+    </header>
+    <section class="containerblock"></section>
+   
+
+    <section>
+      <div class="main_block" id="main">
+        <div class="row_container2">
+          <div class="main_rank row"></div>
+          <div class="main_collector row">
+            <p id="main_collector"></p>
+          </div>
+          <div class="main_sample row largerow">
+     
+          </div>
+          <div class="main_score row">
+            <progress class="main_progress" max="100"></progress>
+            <span class="main_score_text"></span>
+          </div>
+        </div>
+
+        <div class="hide_detailcontainer"></div>
+      </div>
+    </section>
+    
+    </div>
+ 
+    </div>
+  </body>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/apps.js"></script>
+  <script src="js/apps2.js"></script>
+ 
+ 
+</html>
