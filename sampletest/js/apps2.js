@@ -43,32 +43,23 @@ function drawline() {
     sum += 90;
   }
 
-  var datas = [
-    { collector: "rurubisco", rank: 8, score: 30 },
-    { date: "2020-04-23 00:39:28", quality: "good" },
-
-    { date: "2020-04-26 12:10:31", quality: "unknown" },
-    { date: "2020-04-27 08:24:00", quality: "bad" },
-    { date: "2020-04-28 08:24:00", quality: "bad" },
-    { date: "2020-04-30 01:10:31", quality: "bad" },
-  ];
   var today = new Date();
   today.setHours(0, 0, 0, 0);
   todayMillis = today.getTime();
 
   var main_rank = d3
     .select(".main_rank")
-    .data(datas)
+
     .text((d) => 1);
 
   var main_score_text = d3
     .select(".main_score_text")
-    .data(datas)
-    .text((d) => d.score);
+
+    .text((d) => 80);
   var main_score = d3
     .select(".main_progress")
-    .data(datas)
-    .attr("value", (d) => d.score);
+
+    .attr("value", (d) => 80);
   formatDay = d3.timeFormat("%Y/%m/%d ");
   formatTime = d3.timeFormat("%H:%M:%S");
 }

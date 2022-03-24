@@ -172,7 +172,12 @@ p {
   background: lightgrey;
   margin: 3px;
 }
-
+#small_progress {
+  height: 10px;
+  width: 105px;
+  background: lightgrey;
+  margin: 3px;
+}
 .active {
   background-color: none;
   display: flex;
@@ -247,10 +252,10 @@ p {
   border: 5px solid blue;
 }
 
-.hide_detailcontainer {
-  display: none;
-  /* width: 100%; */
-}
+/* .hide_detailcontainer { */
+/* display: none; */
+/* width: 100%; */
+/* } */
 .row_container2 > div {
   display: flex;
   justify-content: center;

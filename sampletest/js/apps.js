@@ -23,8 +23,8 @@ for (let i = 0; i < datas.length; i++) {
 <div class="small_collector row"><p></p></div>
 <div class="small_sample row largerow"></div>
 <div class="small_score row">
-  <progress class="small_progress" max="100"></progress>
-  <span class="small_score_text"></span>
+  <progress id="small_progress" max="100"></progress>
+  <span id="small_score_text"></span>
 </div>
 </div>
 <div class="detailactive">
@@ -67,7 +67,12 @@ for (let i = 0; i < datas.length; i++) {
       $(document).ready(function () {
         $(Array.from(d3.select(blocks).selectAll(".row_container1"))[1]).hide();
       });
-
+      console.log(
+        d3
+          .select(blocks)
+          .select("#small_progress")
+          .attr("value", (d) => 60)
+      );
       // console.log(d3.select(blocks).select(".small_sample").node());
 
       var margin = { top: 20, right: 20, bottom: 20, left: 20 },
@@ -236,8 +241,8 @@ for (let i = 0; i < datas.length; i++) {
                          </div>
     
                          <div class="score_block_style" >
-                             <progress class="main_progress" max="100"value="80"> </progress>
-                             <span class="main_score_text" >80</span>
+                             <progress id="small_progress" max="100"value="80"> </progress>
+                             <span id="small_text" >80</span>
                          </div>
                  </div>
                  <div class="row_content2">
@@ -272,7 +277,7 @@ for (let i = 0; i < datas.length; i++) {
             .select("#detail1")
             .node().children[0].children[1].children[0].textContent =
             i.time_observed_at;
-          // console.log();
+
           var quality_title = Array.from(
             d3.select(blocks.children[0].children[1]).select("#qualitys_title")
           );
@@ -313,7 +318,15 @@ for (let i = 0; i < datas.length; i++) {
             .call(yAxis_small)
             .selectAll("text")
             .style("font-size", "15px");
+          const mains_hide = d3.select(main).select(".detailactive").node();
 
+          $(document).ready(function () {
+            $(mains_hide).hide();
+            $("#main").removeClass("active");
+            $("#main").addClass("main_block");
+          });
+          // console.log(d3.select(main));
+          //small section hide
           var sections = Array.from(d3.selectAll(".small>div"));
           for (k of sections) {
             if (k.parentNode.getAttribute("id") == blocks.getAttribute("id")) {
