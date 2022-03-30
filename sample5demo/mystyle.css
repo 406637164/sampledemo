@@ -3,19 +3,29 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background-color: #f3f3f3;
 }
+
 .cir {
   z-index: 10;
 }
 .cir:hover {
   opacity: 0.5;
 }
+
+svg {
+  background-color: white;
+}
 p {
   padding: 0.15rem;
   text-align: center;
   word-break: break-all;
   font-size: 1.5rem;
+  background-color: white;
+  align-items: center;
+  line-height: 25px;
 }
+
 .container {
   display: flex;
   font-size: 1.5rem;
@@ -30,11 +40,13 @@ p {
   align-items: center;
   justify-content: center;
   margin: 0.15rem;
+  background-color: white;
   box-shadow: 2.5px 2.5px gainsboro;
 }
 .container #collector {
   border: 1px solid gainsboro;
   display: flex;
+  background-color: white;
   width: 147px;
   height: 100px;
   text-align: center;
@@ -47,8 +59,9 @@ p {
 .container #samples {
   border: 1px solid gainsboro;
   display: flex;
-  width: 1400px;
+  width: 1390px;
   height: 100px;
+  background-color: white;
   text-align: center;
   align-items: center;
   justify-content: space-between;
@@ -64,6 +77,7 @@ p {
   align-items: center;
   flex-grow: 1.5;
   flex-shrink: 1;
+  background-color: white;
   margin: 0.25rem;
 }
 
@@ -72,6 +86,8 @@ p {
   display: flex;
   flex-direction: column;
   width: 10vw;
+  background-color: white;
+
   height: 75px;
   font-size: 1rem;
   text-align: center;
@@ -86,6 +102,7 @@ p {
   flex-direction: row;
   width: 95%;
   height: 25px;
+  background-color: white;
   font-size: 1rem;
   text-align: center;
   align-items: center;
@@ -94,6 +111,9 @@ p {
 
   /* align-self: flex-end; */
   margin: 0.25rem;
+}
+span {
+  background-color: white;
 }
 #qualitytexts > div {
   display: column;
@@ -108,7 +128,7 @@ p {
   height: 25px;
   font-size: 1rem;
   text-align: center;
-
+  background-color: white;
   align-items: top;
   justify-content: center;
   /* align-self: flex-end; */
@@ -166,12 +186,15 @@ p {
 }
 .active .detailactive {
   margin: 0.25rem;
-  height: 500px;
 
-  border: 3px solid blue;
-  width: 97 vw;
+  background-color: #f3f3f3;
+  /* border: 3px solid blue; */
+  width: 1860px;
   display: flex;
+  height: 430px;
   flex-direction: column;
+  animation-name: example;
+  animation-duration: 4s;
 }
 
 /* .main_progress {
@@ -192,22 +215,52 @@ p {
   display: flex;
 
   flex-direction: column;
-
+  z-index: 2;
   border: 5px solid red;
-  height: 950px;
-  width: 1890px;
+  height: 830px;
+  width: 1880px;
+  background-color: #f3f3f3;
+  -webkit-animation: slideIn 1s forwards;
+  -moz-animation: slideIn 1s forwards;
+  animation: slideIn 1s forwards;
 }
-
+@-webkit-keyframes slideIn {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-moz-keyframes slideIn {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideIn {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .row_container1 {
   display: flex;
   justify-content: flex-start;
   height: 90%;
-  width: 1870px;
+  width: 1860px;
+  padding-left: 1px;
 }
+
 .row_container2 {
   display: flex;
   /* justify-content: center; */
-  height: 50vh;
+  width: 1860px;
+  height: 340px;
 }
 .row_container_second1 {
   display: flex;
@@ -241,12 +294,15 @@ p {
   height: 95%;
   width: 150px;
   margin: 0.15rem;
+  border: 1px solid gainsboro;
   box-shadow: 2.5px 2.5px gainsboro;
+  background-color: white;
 }
 .largerow {
   display: flex;
   width: 1400px;
   margin: 0.15rem;
+  border: 1px solid gainsboro;
   box-shadow: 2.5px 2.5px gainsboro;
 }
 .displayrow {
@@ -260,7 +316,7 @@ p {
   height: 95%;
   width: 100vw;
   margin: 0.15rem;
-  border: 5px solid blue;
+  /* border: 5px solid blue; */
 }
 
 /* .hide_detailcontainer { */
@@ -278,6 +334,7 @@ p {
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  background-color: white;
 }
 .second_block > .row_container1 > .row {
   display: flex;
@@ -287,6 +344,7 @@ p {
 }
 section {
   margin: 0.25rem;
+  width: 1880px;
 }
 section > div:hover {
   border: 5px solid red;
@@ -371,6 +429,7 @@ section > div:hover {
 .detailactive > .row_container1 > .detail_container:first-child > div {
   font-size: 1.25rem;
 }
+
 /* #rows2 > .detail_quality { */
 /* border: 1px solid gainsboro; */
 /* display: flex; */
@@ -414,6 +473,7 @@ section > div:hover {
   align-items: center;
   border: 1px solid gainsboro;
   box-shadow: 2px 2px gainsboro;
+  background-color: white;
   /* align-items: flex-end; */
 }
 #rows2 > .row_container1 > div {
@@ -435,7 +495,7 @@ section > div:hover {
   font-size: 1.75rem;
   text-align: center;
   align-items: center;
-
+  background-color: white;
   justify-content: center;
 }
 #rows2 > .problem_block_style {
@@ -466,6 +526,7 @@ section > div:hover {
   text-align: left;
   align-items: center;
   justify-content: center;
+  background-color: white;
 }
 
 #rows2 > div > .method_block_style {
@@ -499,9 +560,10 @@ section > div:hover {
   box-shadow: 2px 2px gainsboro;
   display: flex;
   border: 1px solid gainsboro;
+  background-color: white;
 }
 img {
-  width: 80%;
+  width: 95%;
   height: 80%;
   animation-duration: 1.5s;
   animation-name: slidein;
@@ -523,6 +585,7 @@ img {
   box-shadow: 2px 2px gainsboro;
   border: 1px solid gainsboro;
   width: 19rem;
+  background-color: white;
   height: 100%;
 }
 #rows2 .detail_content {
@@ -531,6 +594,7 @@ img {
   align-items: center;
   /* justify-content: flex-start; */
   flex-direction: column;
+  border: #036ffc 3px solid;
 }
 #rows2 .detail_content:first-child {
   width: 40%;
@@ -546,6 +610,7 @@ img {
   border: 1px solid gainsboro;
   box-shadow: 2px 2px gainsboro;
   align-items: center;
+  background-color: white;
 }
 #rows2 > .detail_content > .row_content1 {
   display: flex;
@@ -553,7 +618,7 @@ img {
   width: 1560px;
   box-sizing: content-box;
   justify-content: flex-end;
-  margin-right: 0.3rem;
+
   padding: 0.25rem;
 }
 #rows2 > .detail_content > .row_content2 {
@@ -607,4 +672,16 @@ div.tooltip {
   border: 0px;
   border-radius: 8px;
   pointer-events: none;
+}
+.row_content1 {
+  animation-name: example;
+  animation-duration: 0.25s;
+}
+@keyframes example {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

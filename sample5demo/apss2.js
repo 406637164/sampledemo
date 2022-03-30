@@ -92,7 +92,7 @@ for (let i = 0; i < datas.length; i++) {
       let xScale_small = d3
         .scaleTime()
         .domain(d3.extent(data, (d) => d.date))
-        .range([margin.left * 6 + 5, width])
+        .range([margin.left * 8 + 5, width])
         .nice();
       // console.log(d3.extent(data, (d) => d.date));
 
@@ -125,7 +125,7 @@ for (let i = 0; i < datas.length; i++) {
       // console.log(data);
 
       smallsvg
-        .attr("transform", `translate(0,20)`)
+        .attr("transform", `translate(30,20)`)
         .selectAll("circle")
         .data(data)
         .join("circle")
@@ -169,10 +169,19 @@ for (let i = 0; i < datas.length; i++) {
           <div class="row_container2" id="rows2" style="height:300px; ">
              
         
-                <div class="detail_content" style="width: 100%; height:500px  ">
-                  <div class="row_content1" style="width: 1850px;justify-content:flex-start">
+                <div class="detail_content" style="width: 100%; height:470px  ">
+                  <div class="row_content1" style="width: 1840px;justify-content:flex-start">
         
-                    <div class="quality_block_style" style="width: 425px;" >
+                      <div class="quality_block_style" style="width:265px;" >
+                   
+                      <div class="quality_block" style="height: 100%;display:flex colomn;justify-content: center;align-items:flex-start;font-size: 1rem;">
+                          <div  style="display:flex;justify-content: center;align-items:center;background-color:white;">&#128337;<span id="times">55465</span></div>   
+                          <div  style="display:flex;justify-content: center;align-items:center;background-color:white;">🆔<span id="sampleid">54654</span></div>   
+                            </div>
+                           
+                              
+                           </div>
+                    <div class="quality_block_style" style="width: 150px;" >
                    
                       <div class="quality_block" style="height: 100%;">
                           <span>Quality</span>
@@ -182,7 +191,7 @@ for (let i = 0; i < datas.length; i++) {
                           
                        </div>
                      
-                       <div class="quality_block_style" style="width: 334px;" >
+                       <div class="quality_block_style" style="width: 325px;" >
                    
                         <div class="quality_block" style="height: 100%;">
                             <span>Problem</span>
@@ -191,7 +200,7 @@ for (let i = 0; i < datas.length; i++) {
                          
                             
                          </div>
-                         <div class="quality_block_style" style="width: 334px;" >
+                         <div class="quality_block_style" style="width: 325px;" >
                    
                           <div class="quality_block" style="height: 100%;">
                               <span> Method to Improve
@@ -201,7 +210,7 @@ for (let i = 0; i < datas.length; i++) {
                            
                               
                            </div>
-                           <div class="quality_block_style" style="width: 334px;" >
+                           <div class="quality_block_style" style="width: 325px;" >
                    
                             <div class="quality_block" style="height: 100%;">
                                 <span>Photo</span>
@@ -210,7 +219,7 @@ for (let i = 0; i < datas.length; i++) {
                              
                                 
                              </div>
-                             <div class="quality_block_style" style="width: 334px;" >
+                             <div class="quality_block_style" style="width: 325px;" >
                    
                               <div class="quality_block" style="height: 100%;">
                                   <span> Map </span>
@@ -219,7 +228,7 @@ for (let i = 0; i < datas.length; i++) {
                                
                                   
                                </div>
-                               <div class="quality_block_style" style="width: 145px;" >
+                               <div class="quality_block_style" style="width: 141px;" >
                    
                                 <div class="quality_block" style="height: 100%;">
                                     <span>Score</span>
@@ -231,12 +240,13 @@ for (let i = 0; i < datas.length; i++) {
          
                 
                   </div>
-                  <div class="row_content1" style="width: 1850px;">
+                  <div class="row_content1" style="width: 1840px;">
         
                     <div class="quality_block_style" style="width: 280px;" >
-                   
+                     
                       <div class="quality_block" style="height: 100%;">
-                          <span>Quality</span>
+                          
+                          <span>Sample</span>
                           
                         </div>
                        
@@ -281,8 +291,11 @@ for (let i = 0; i < datas.length; i++) {
                             </div>   
                       </div>
                
-                      <div class="photo_block_style"style="width: 345px;">
-                              <img src="https://static.inaturalist.org/photos/182181363/large.jpeg" alt="" width="100%" height="100%">
+                      <div class="photo_block_style"style="width: 345px;display:flex; flex-direction: column;">
+                          
+                             <img src="https://static.inaturalist.org/photos/182181363/large.jpeg" alt="" width="100%" height="100%">
+                         
+                             <div background-image: url("ina.png");  alt="" width="100px" height="100px"></div>
                           </div>
                           <div class="map_block_style" style="width: 345px;">
                               <img src="ina.png" alt="" width="100%" height="100%">
@@ -294,12 +307,11 @@ for (let i = 0; i < datas.length; i++) {
                         </div>
                               
                               </progress>
-                               
                           </div>
                   </div>
                   <div class="row_content2">
                  <div> 
-                      <span> I willing to get another sample</span>
+                        I willing to get another sample 
                       <input type="button" value="Yes">
                   </div>
                       
@@ -314,20 +326,34 @@ for (let i = 0; i < datas.length; i++) {
             .node()
             .children[0].setAttribute("src", i.photos[0].url);
 
-          d3
-            .select(blocks.children[0].children[1])
-            .node().children[0].children[0].children[0].children[0].children[0].textContent =
-            i.species_guess;
-          var margins = { top: 20, right: 20, bottom: 20, left: 20 },
+          // d3
+          //   .select(blocks.children[0].children[1])
+          //   .node().children[0].children[0].children[0].children[0].children[0].textContent =
+          //   i.species_guess;
+          Array.from(d3.select(blocks).select("#times"))[0].textContent =
+            i.time_observed_at;
+          Array.from(d3.select(blocks).select("#sampleid"))[0].textContent =
+            i.id;
+          const small_speices = Array.from(
+            d3.select(
+              blocks.children[0].children[1].children[0].children[0].children[0]
+                .children[1].children[0]
+            )
+          )[0];
+          small_speices.textContent = i.species_guess;
+          if (small_speices.textContent == "") {
+            small_speices.textContent = "unknown";
+          }
+          var margins = { top: 40, right: 50, bottom: 40, left: 40 },
             widths = 1350 - margins.left - margins.right,
-            heights = 340 - margins.top - margins.bottom;
+            heights = 360 - margins.top - margins.bottom;
 
           d3.select(blocks)
             .select("svg")
             .node()
             .setAttribute("height", heights + margin.top + margin.bottom);
 
-          xScale_small.range([margins.left * 3 + 5, widths]);
+          xScale_small.range([margins.left + 25, widths]);
           yScale_small.range([margins.bottom, heights - margins.bottom]);
           d3.select(blocks)
             .select("svg")
@@ -376,8 +402,6 @@ for (let i = 0; i < datas.length; i++) {
                   .domain(d3.extent(data, (d) => d.date))
                   .range([margin.left * 6 + 5, width])
                   .nice();
-
-                // console.log(d3.extent(data, (d) => d.date));
 
                 yScale_small = d3
                   .scaleTime()
